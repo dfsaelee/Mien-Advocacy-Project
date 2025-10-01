@@ -1,0 +1,415 @@
+/* Add CSS styles for your web site here and use them in index.html. */
+/* Font */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* For Our Navbar */
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: space-around;
+    background-color: #FBF7F0;
+}
+
+/* Title and general */
+.main-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dark-mode {
+    background-color: rgb(56, 56, 56);
+    color: rgb(236, 236, 236);
+}
+
+
+.dark-mode #head-nav,
+.dark-mode #navigation-links,
+.dark-mode #button-links {
+    background-color: #1a1a1a;
+}
+
+.dark-mode #navigation-links li a,
+.dark-mode #button-links li a,
+.dark-mode #link-bubble a,
+.dark-mode #home-btn a {
+    color: white;
+    /* Links will be white in dark mode */
+}
+
+.dark-mode #navigation-links li a:hover,
+.dark-mode #button-links li a:hover {
+    color: #ddd;
+    /* Slightly lighter color on hover */
+}
+
+.dark-mode .resource-button,
+.dark-mode #theme-button,
+.dark-mode #thanks-exit-button {
+    background-color: #555;
+    /* Darker button background */
+    color: rgb(236, 236, 236);
+}
+
+.dark-mode .form-container {
+    background-color: #222;
+    /* Darker form background */
+    color: rgb(236, 236, 236);
+}
+
+/*Header Things*/
+header {
+    height: 100vh;
+}
+header h1 {
+    /* This makes the spacing bad*/
+    margin: 0;
+    padding: 0;
+}
+
+header.main-title {
+    border: #1a1a1a;
+    border-radius: 100;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+}
+
+header.page-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+
+/* Nav Bar */
+#home-btn {
+    position: relative;
+    font-size: large;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+#home-btn img {
+    margin: 10px 20px 0 0;
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+}
+
+#home-btn a {
+    margin-right: 20px;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: large;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+#head-nav::before {
+    position: fixed;
+    /* Matches the fixed positioning of #head-nav */
+    transition: var(--transition-scroll);
+    content: '';
+    top: var(--top-calc);
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(248, 229, 176);
+    /* Semi-transparent overlay color */
+    mix-blend-mode: color;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.21);
+    z-index: -1;
+}
+
+#head-nav {
+    /* Define CSS variable to manipulate scrolling for psuedo element*/
+    --top-calc: 0;
+    --transition-scroll: top 0.2s ease;
+    transition: var(--transition-scroll);
+    padding: 1px 0 5px 0;
+    position: fixed;
+    top: var(--top-calc);
+    left: 0;
+    width: 100%;
+    /*make fixed eventually? */
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    z-index: 100;
+}
+
+nav img {
+    width: 100%;
+    max-width: 40px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    padding: 0px;
+}
+
+#navigation-links,
+#button-links {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navigation-links li,
+#button-links li {
+    flex-direction: row;
+    margin-right: 10px;
+}
+
+#navigation-links li a {
+    text-decoration: none;
+    color: black;
+}
+
+#navigation-links li a:hover {
+    transition: .2s;
+    font-size: 102%;
+    text-transform: scale(1.1);
+    filter: brightness(0.8);
+}
+
+/* Button CSS */
+#theme-button {
+    background-color: rgb(218, 221, 223);
+    display: block;
+    border-radius: 5px;
+}
+
+.resource-button {
+    opacity: 1;
+    display: block;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    background-color: rgb(237, 226, 191);
+}
+
+.popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Background overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.form-container {
+    position: relative;
+    /* so the close button is relative*/
+    bottom: 100px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 600px;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#petition-form {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+#close-button {
+    width: fit-content;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    color: black;
+    cursor: pointer;
+}
+
+/* Thanks Modal */
+.modal {
+    /* Hide the Modal Default*/
+    display: none;
+    position: fixed;
+    z-index: 101;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Center the modal */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    /* Adjust font size */
+    border-radius: 10px;
+}
+
+/* box that contains all the content and images */
+.modal-content {
+    background-color: rgb(210, 216, 226);
+    /* update the colors and font sizes as you like */
+    color: black;
+    text-align: center;
+    font-size: 3rem;
+    display: flex;
+    /* adds flexbox to center all items */
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+    /* Wraps long words */
+    box-sizing: border-box;
+    /* Ensures padding doesn’t affect width */
+    border-radius: 25px;
+}
+
+#thanks-modal-content {
+    width: 22rem;
+    /* sets a default width for the text container */
+}
+
+#modal-text-container {
+    display: flex;
+    /* adds flexbox to center the text and buttons (stretch feature) */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#thank-you-image {
+    transition: transform 0.1s ease-in-out;
+    width: 50%;
+    height: auto;
+    border:rgb(236, 148, 47);
+    border-style: solid;
+    border-radius: 25px;
+    margin: 1%;
+}
+
+#thanks-exit-button {
+    /*
+    width: fit-content;
+    position: absolute;
+    */
+    position: relative;
+    /* I wish the background was a div*/
+    top: -40%;
+    right: -2%;
+    font-size: 28px;
+    color: black;
+    background-color: #ffffff00;
+    border: none;
+    cursor: pointer;
+    z-index: 102;
+}
+
+/* Make not hidden later (put none)*/
+.hidden {
+    display: none;
+}
+
+/* Building the Sections*/
+.section-description {
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 5% 5% 5% 5%;
+    padding: 5%;
+    width: 70vw;
+    /*Note to self, I can't get this to fill entire screen*/
+    height: 100vh;
+    border-radius: 15px;
+    border:#dcdcdcc2;
+    border-style: solid;
+}
+
+.text-blurb {
+    max-width: 50%;
+    width: 50%;
+    padding: 20px;
+    background-color: #FBF7F0; 
+}
+
+.media-box {
+    width: 50%;
+    padding: 30px 50px 30px 50px;
+}
+
+.media-box img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    border-radius: 15px;
+    padding: 0;
+    border-color: rgba(236, 206, 152, 0.39);
+    border-style: solid;
+    border-width: 5px;
+    box-shadow: 1px 2px 1px rgba(234, 234, 232, 0.463);
+}
+
+#link-bubble {
+    text-align: left;
+    padding: 30px 50px 30px 50px;
+}
+
+.text-blurb {
+    border-radius: 25px;
+    border-color: rgba(236, 206, 152, 0.39);
+    border-style: solid;
+    border-width: 5px;
+    box-shadow: 1px 2px 1px rgba(234, 234, 232, 0.463);
+}
+
+/* Buttons and Stuff */
+button:hover {
+    transition: .2s;
+    transform: scale(1.1);
+    filter: brightness(0.9);
+}
+
+button:active {
+    background-color: rgb(210, 196, 110);
+}
+
+
+/* Bottom Links and Nav */
+#link-bubble {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#link-bubble a:visited {
+    color: blueviolet;
+}
+
+.hiddenFadeIn {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; 
+}
