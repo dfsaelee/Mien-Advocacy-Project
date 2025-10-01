@@ -14,3 +14,4 @@ Features:
 - A small, accessible webpage documenting Iu Mien culture.
 - Sections for About, Events, and Resources.
 - A membership/signature form that shows a thank-you modal when someone signs.
+- Darkmode
