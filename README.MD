@@ -1,7 +1,7 @@
 
 # Iu Mien Culture Center
 
-Simple outreach page design to share and preserve Iu Mien culture. Built with plain HTML, CSS, and a JavaScript. Designed in Figma and created for CodePath's Web Development 101's advocacy project.
+Simple outreach page design to share and preserve Iu Mien culture. Built with plain HTML, CSS, and a JavaScript. Designed in Figma and created for CodePath's Web Development 101's advocacy project in Fall 2024.
 
 #### Initial design
 
